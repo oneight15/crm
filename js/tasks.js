@@ -5,7 +5,7 @@
 const rain = Math.round((Math.random()).toFixed(1));
 // console.log(rain);
 
-if (rain == 1) {
+if (rain === 1) {
   console.log('Пошёл дождь. Возьмите зонт!');
 } else {
   console.log('Дождя нет!');
