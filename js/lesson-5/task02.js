@@ -10,10 +10,10 @@ const isPrime = n => {
   }
 
   if (k > 2) {
-    return `${n} - не простое число`
+    return false;
   }
 
-  return `${n} - простое число`;
+  return true;
 }
 
 console.log(isPrime(151));
@@ -23,4 +23,6 @@ console.log(isPrime(2));
 console.log(isPrime(100));
 console.log(isPrime(77));
 
-
+for (let j = -100, count = 0; j < 100; j++) {
+  isPrime(j) && console.log(`${++count}) - ${j}.`)
+}
