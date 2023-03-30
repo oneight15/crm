@@ -18,7 +18,7 @@ const calculate = (sum, count, promo) => {
     price -= 500;
   }
 
-  console.log(price)
+  return price;
 }
 
-calculate(60000, 11, 'G3H2Z1')
+console.log(calculate(60000, 11, 'G3H2Z1'));

@@ -1,23 +1,24 @@
 'use strict'
 
-let tax = 0;
-const stepMin = 15000;
-const stepMax = 50000;
-const profit2 = +prompt('Укажите сумму дохода:');
-let balance = profit2;
-
-if (balance > stepMax) {
-  tax = (balance - stepMax) * 0.3;
-  balance = stepMax;
-}
-
-if (balance >= stepMin) {
-  tax += (balance - stepMin) * 0.2;
-  balance = stepMin;
-}
-
-if (balance > 0) {
-  tax += balance * 0.13;
-}
-
-console.log(`Сумма налога составляет: ${tax}`);
+{
+  const profit = +prompt('Укажите сумму дохода:');
+  let tax = 0;
+  let balance = profit;
+  
+  if (balance > 50000) {
+    tax = (balance - 50000) * 0.3;
+    balance = 50000;
+  }
+  
+  if (balance > 15000) {
+    tax += (balance - 15000) * 0.2;
+    balance = 15000;
+  }
+  
+  if (balance > 0) {
+    tax += (balance - 0) * 0.13;
+    balance = 0;
+  }
+  
+  console.log(`Сумма налога составляет: ${tax}`);
+  }

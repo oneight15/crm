@@ -1,8 +1,8 @@
 'use strict'
 
 const modifyStr = str => {
-  const newStr = str[0].toUpperCase() + str.substring(1).toLowerCase();
-  console.log(newStr);
+  const newStr = str.trim().toLowerCase();
+  return newStr[0].toUpperCase() + newStr.substring(1);
 }
 
-modifyStr('проверка ПРОВЕРКА ПРоверКА');
+console.log(modifyStr('       пПРОВЕРКАuuПРоверКА'));
