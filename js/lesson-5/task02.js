@@ -2,11 +2,14 @@
 
 const isPrime = n => {
   let k = 0;
-
-  for (let i = 1; i <= n; i++) {
-    if (!(n % i)) {
-      k++;
+  if (n > 1) {
+    for (let i = 1; i <= n; i++) {
+      if (!(n % i)) {
+        k++;
+      }
     }
+  } else {
+    return false;
   }
 
   if (k > 2) {
@@ -23,6 +26,6 @@ console.log(isPrime(2));
 console.log(isPrime(100));
 console.log(isPrime(77));
 
-for (let j = -100, count = 0; j < 100; j++) {
-  isPrime(j) && console.log(`${++count}) - ${j}.`)
+for (let i = -100, count = 0; i < 542; i++) {
+  isPrime(i) && console.log(`${++count}) - ${i}.`)
 }
