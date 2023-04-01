@@ -2,11 +2,13 @@
 
 const filter = (allStudents, failedStudents) => {
   const successStudents = [];
+
   for (const student of allStudents) {
     if (!(failedStudents.includes(student))) {
       successStudents.push(student);
     }
   }
+  
   return successStudents;
 }
 
