@@ -3,12 +3,21 @@
 const getLeapYearArr = (n , m) => {
   const leapYearArr = [];
 
-  for (let i = n; i < m; i++) {
-    if (i % 4)
-    leapYearArr.push(Math.floor(Math.random() * (m - n + 1)) + n);
+  if (m < n) {
+    for (let i = m; i <= n; i++) {
+      if (!(i % 4)) {
+        leapYearArr.push(i);
+      }
+    }
+  } else {
+    for (let i = n; i <= m; i++) {
+      if (!(i % 4)) {
+        leapYearArr.push(i);
+      }
+    }
   }
 
   return leapYearArr;
 }
 
-console.log(getLeapYearArr(25, 5));
+console.log(getLeapYearArr(2024, 2000));
