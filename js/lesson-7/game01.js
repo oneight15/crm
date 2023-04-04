@@ -1,38 +1,37 @@
 'use strict';
 
-// const getRandomNumber = Math.ceil(Math.random() * 100);
-// console.log(getRandomNumber);
+const randomNumber = Math.ceil(Math.random() * 100);
 
-// alert('Я загадал число от 1 до 100, попробуй угадать')
-// const tryToGuess = prompt('Введи число')
+alert('Я загадал число от 1 до 100, попробуй угадать');
 
-// console.log(tryToGuess);
+const game = () => {
+  const tryToGuess = prompt('Введи число');
 
-// while (tryToGuess !== null) {
-  
-//   switch (tryToGuess) {
-//     case (tryToGuess > getRandomNumber):
-//       alert('Меньше');
-//       break;
+  if (typeof tryToGuess === 'object') {
+    return alert('Сыграем в другой раз!')
+  }
 
-//     case (tryToGuess < getRandomNumber):
-//       alert('Больше');
-//       break;
+  switch (true) {
+    case (+tryToGuess === randomNumber):
+      alert('Правильно, ты угадал!');
+      break;
 
-//     default:
-//       alert('произошла какая-то херня');
-//   }
-// }
+    case (+tryToGuess > randomNumber):
+      alert('Загаданное число меньше!');
+      game();
+      break;
+      
+    case (+tryToGuess < randomNumber):
+      alert('Загаданное число больше!');
+      game();
+      break;
+      
+    default:
+      alert('Введи число!');
+      game();
+      break;
+  }
+}
 
-
-// if (tryToGuess > getRandomNumber) {
-//   alert('Больше')
-// } else {
-//   alert('Меньше')
-// }
-
-
-
-
-
+game()
 
