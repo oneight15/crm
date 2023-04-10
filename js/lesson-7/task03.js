@@ -2,23 +2,43 @@
 
 const getRandomArr = (x, n = 0, m = 0, str) => {
   const randomArr = [];
+  const max = Math.max(n, m);
+  const min = Math.min(n, m);
 
-  while (x > randomArr.length) {
-    randomArr.push(Math.floor(Math.random() * (m - n + 1)) + n);
-  }
+  // while (x > randomArr.length) {
+  //   const randomItem = Math.floor(Math.random() * (max - min + 1) + min);
 
-  switch (str) {
-    case 'even':
-      return randomArr.map(item => item % 2 ? item + 1 : item);
-      break;
-    case 'odd':
-      return randomArr.map(item => item % 2 ? item : item + 1);
-      break;
-    default:
-      return randomArr;
-  }
+  //   // if (str === 'even') {
+  //   //   randomArr.push(Math.floor(randomItem / 2) * 2);
+  //   // } else if (str === 'odd') {
+  //   //   randomArr.push((Math.floor(randomItem / 2) * 2) + 1);
+  //   // } else {
+  //   //   randomArr.push(randomItem);
+  //   // }
+
+
+
+  //   switch (str) {
+  //     case 'even':
+  //       while (randomItem % 2 !== 0) {
+
+  //       }
+  //       return randomArr.push(Math.floor(randomItem / 2) * 2);
+  //       break;
+  //     case 'odd':
+  //       return randomArr.push((Math.floor(randomItem / 2) * 2) + 1);
+  //       break;
+  //     default:
+  //       console.log('qeqweqw');
+  //   }
+
+    
+  // }
+
+  return randomArr;
+
+  
 }
 
-console.log(getRandomArr(15, -10, 10, 'even'));
-console.log(getRandomArr(15, -10, 10, 'odd'));
-console.log(getRandomArr(15, -10, 10, '123'));
+console.log(getRandomArr(99, 11, -11, 'even'));
+
