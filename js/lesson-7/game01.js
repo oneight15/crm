@@ -1,14 +1,18 @@
 'use strict';
 
 const randomNumber = Math.ceil(Math.random() * 100);
+console.log(randomNumber);
 
 alert('Я загадал число от 1 до 100, попробуй угадать');
 
-const game = () => {
-  const tryToGuess = prompt('Введи число');
+while (true) {
+  let tryToGuess = prompt('Введи число');
 
-  if (typeof tryToGuess === 'object') {
-    return alert('Сыграем в другой раз!')
+  if (tryToGuess === null) {
+    alert('Сыграем в другой раз!');
+    break;
+  } else if (isNaN(tryToGuess)) {
+    alert('Введи число!');
   }
 
   switch (true) {
@@ -18,20 +22,22 @@ const game = () => {
 
     case (+tryToGuess > randomNumber):
       alert('Загаданное число меньше!');
-      game();
       break;
       
     case (+tryToGuess < randomNumber):
       alert('Загаданное число больше!');
-      game();
       break;
       
     default:
       alert('Введи число!');
-      game();
       break;
   }
+
+  if (+tryToGuess === randomNumber) {
+    break;
+  }
+
 }
 
-game()
+
 

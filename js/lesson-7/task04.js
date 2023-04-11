@@ -2,22 +2,16 @@
 
 const getLeapYearArr = (n , m) => {
   const leapYearArr = [];
+  const max = Math.max(n, m);
+  const min = Math.min(n, m);
 
-  if (m < n) {
-    for (let i = m; i <= n; i++) {
-      if (!(i % 4)) {
-        leapYearArr.push(i);
-      }
-    }
-  } else {
-    for (let i = n; i <= m; i++) {
-      if (!(i % 4)) {
-        leapYearArr.push(i);
-      }
+  for (let i = min; i <= max; i++) {
+    if (((i % 4 === 0 ) && (i % 100 !== 0)) || (i % 400 === 0)) {
+      leapYearArr.push(i);
     }
   }
-
+  
   return leapYearArr;
 }
 
-console.log(getLeapYearArr(2024, 2000));
+console.log(getLeapYearArr(2400, 1600));

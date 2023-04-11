@@ -5,40 +5,28 @@ const getRandomArr = (x, n = 0, m = 0, str) => {
   const max = Math.max(n, m);
   const min = Math.min(n, m);
 
-  // while (x > randomArr.length) {
-  //   const randomItem = Math.floor(Math.random() * (max - min + 1) + min);
+  while (x > randomArr.length) {
+    const randomItem = Math.floor(Math.random() * (max - min + 1) + min);
 
-  //   // if (str === 'even') {
-  //   //   randomArr.push(Math.floor(randomItem / 2) * 2);
-  //   // } else if (str === 'odd') {
-  //   //   randomArr.push((Math.floor(randomItem / 2) * 2) + 1);
-  //   // } else {
-  //   //   randomArr.push(randomItem);
-  //   // }
+    switch (str) {
+      case 'even':
+        if (randomItem % 2 === 0) {
+          randomArr.push(randomItem);
+        }
+        break;
 
+      case 'odd':
+        if (randomItem % 2 !== 0) {
+          randomArr.push(randomItem);
+        }
+        break;
 
-
-  //   switch (str) {
-  //     case 'even':
-  //       while (randomItem % 2 !== 0) {
-
-  //       }
-  //       return randomArr.push(Math.floor(randomItem / 2) * 2);
-  //       break;
-  //     case 'odd':
-  //       return randomArr.push((Math.floor(randomItem / 2) * 2) + 1);
-  //       break;
-  //     default:
-  //       console.log('qeqweqw');
-  //   }
-
-    
-  // }
-
+      default:
+        randomArr.push(randomItem);
+    }
+  }
   return randomArr;
-
-  
 }
 
-console.log(getRandomArr(99, 11, -11, 'even'));
+console.log(getRandomArr(99, -10, 10, 'odd'));
 
