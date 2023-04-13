@@ -7,22 +7,26 @@ const cart = {
   getTotalPrice() {
     return this.totalPrice;
   },
-  add() {
+  add(itemName, itemPrice, itemCount = 1) {
+    const item = {};
+    item.name = itemName;
+    item.price = itemPrice;
+    item.count = itemCount;
+    this.items.push(item);
 
   },
-  increaseCount() {
-
+  increaseCount(n) {
+    this.count += n;
   },
   calculateItemPrice() {
 
   },
   clear() {
-
+    this.items = [];
+    this.totalPrice = 0;
+    this.count = 0;
   },
   print() {
 
   },
 }
-
-console.log(cart);
-console.log(cart.getTotalPrice());
