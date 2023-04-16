@@ -4,30 +4,31 @@ const cart = {
   items: [],
   totalPrice: 0,
   count: 0,
+
   getTotalPrice() {
     return this.totalPrice;
   },
-  add(itemName, itemPrice, itemCount = 1) {
-    const item = {};
-    item.name = itemName;
-    item.price = itemPrice;
-    item.count = itemCount;
-    this.items.push(item);
+
+  add(name, price, count = 1) {
+    this.items.push({name, price, count});
     this.calculateItemPrice();
-    this.count += item[Object.keys(item)[2]];
+    this.increaseCount(count);
   },
+
   increaseCount(n) {
     this.count += n;
   },
+
   calculateItemPrice() {
-    const priceValue = this.items.flatMap(item => item[Object.keys(item)[1]] * item[Object.keys(item)[2]])
-    this.totalPrice = priceValue.reduce((sum, elem) => sum + elem, 0);
+    this.totalPrice = this.items.reduce((sum, {price, count}) => sum + price * count, 0);
   },
+
   clear() {
     this.items = [];
     this.totalPrice = 0;
     this.count = 0;
   },
+
   print() {
     console.log(JSON.stringify(this.items));
     console.log(`Общая стоимость корзины: ${this.getTotalPrice()}`);
