@@ -24448,6 +24448,6 @@ const listIPv4 = [
   "10.0.32.20"
 ];
 
-const countUniqueIp = arr => [...new Set(arr)].length;
+const countUniqueIp = arr => (new Set(arr)).size;
 
 console.log(countUniqueIp(listIPv4));

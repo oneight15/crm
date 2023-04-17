@@ -2,7 +2,6 @@
 
 const cart = {
   items: [],
-  totalPrice: 0,
   count: 0,
 
   get totalPrice() {
