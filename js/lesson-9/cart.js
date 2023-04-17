@@ -30,7 +30,7 @@ const cart = {
     console.log(JSON.stringify(this.items));
     console.log(`Общая стоимость корзины: ${this.totalPrice}`);
   },
-}
+};
 
 console.log('общая сумма корзины:', cart.totalPrice);
 console.log('общее количество товаров:', cart.count);
