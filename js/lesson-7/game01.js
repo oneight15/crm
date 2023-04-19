@@ -18,20 +18,17 @@ while (tryToGuess !== null && +tryToGuess !== randomNumber) {
     case +tryToGuess > 100:
       alert('Введи число от 1 до 100!');
       break;
-      
+
     case (+tryToGuess > randomNumber):
       alert('Загаданное число меньше!');
       break;
-      
+
     case (+tryToGuess < randomNumber):
       alert('Загаданное число больше!');
       break;
-      
+
     default:
       alert('Правильно, ты угадал!');
       break;
   }
 }
-
-
-
