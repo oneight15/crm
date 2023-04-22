@@ -19,9 +19,11 @@ const cart = {
   },
 
   calculateItemPrice() {
-    const basketPrice = this.items.reduce((sum, {price, count}) => sum + price * count, 0);
+    const basketPrice = this.items.reduce((sum, {price, count}) =>
+      sum + price * count, 0);
 
-    return this.discount ? basketPrice * (1 - this.discount / 100) : basketPrice;
+    return this.discount ?
+      basketPrice * (1 - this.discount / 100) : basketPrice;
   },
 
   set setDiscount(promocode) {
@@ -32,6 +34,10 @@ const cart = {
 
       case 'NEWYEAR':
         this.discount = 21;
+        break;
+
+      default:
+        this.discount = 0;
         break;
     }
   },

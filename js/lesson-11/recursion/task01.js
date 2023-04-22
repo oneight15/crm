@@ -13,6 +13,10 @@ const game = tryToGuess => {
   }
 
   switch (true) {
+    case null:
+      alert('Сыграем в другой раз!');
+      return;
+
     case isNaN(tryToGuess):
     case +tryToGuess < 1:
     case +tryToGuess > 100:
@@ -29,7 +33,7 @@ const game = tryToGuess => {
 
     default:
       alert('Правильно, ты угадал!');
-      return;
+      return 'Правильно, ты угадал!';
   }
 
   return game();

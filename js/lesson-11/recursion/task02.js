@@ -1,15 +1,7 @@
 'use strict';
 
-const getSomeArr = arr => {
-  arr.push(Math.round(Math.random() * 10));
-  const sum = arr.reduce((item, sum) => item + sum, 0);
-
-  if (sum > 50) {
-    return arr;
-  }
-
-  return getSomeArr(arr);
-};
+const getSomeArr = arr => (arr.reduce((sum, item) => sum + item, 0) > 50 ?
+  [...arr] : getSomeArr([...arr, Math.round(Math.random() * 10)]));
 
 const epmtyArr = [];
 const fibo = [0, 1, 1, 2, 3, 5, 8, 13];

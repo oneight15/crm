@@ -1,27 +1,27 @@
 'use strict';
 
 const rectangle = {
-  initWidth: 5,
-  initHeight: 5,
+  _width: 5,
+  _height: 5,
 
   set height(height) {
     if (typeof height === 'number') {
-      this.initHeight = height;
+      this._height = height;
     }
   },
 
   set width(width) {
     if (typeof width === 'number') {
-      this.initWidth = width;
+      this._width = width;
     }
   },
 
   get perimeter() {
-    return `${(this.initWidth + this.initHeight) * 2}см`;
+    return `${(this._width + this._height) * 2}см`;
   },
 
   get area() {
-    return `${this.initWidth * this.initHeight}см`;
+    return `${this._width * this._height}см`;
   },
 };
 
