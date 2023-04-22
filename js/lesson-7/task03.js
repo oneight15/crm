@@ -15,7 +15,7 @@ const getRandomArr = (x, n = 0, m = 0, str) => {
   }
 
   return randomArr;
-}
+};
 
 console.log(getRandomArr(99, -11, 11, '123'));
 

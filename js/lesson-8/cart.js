@@ -20,7 +20,8 @@ const cart = {
   },
 
   calculateItemPrice() {
-    this.totalPrice = this.items.reduce((sum, {price, count}) => sum + price * count, 0);
+    this.totalPrice = this.items.reduce((sum, {price, count}) =>
+      sum + price * count, 0);
   },
 
   clear() {
@@ -33,7 +34,7 @@ const cart = {
     console.log(JSON.stringify(this.items));
     console.log(`Общая стоимость корзины: ${this.getTotalPrice()}`);
   },
-}
+};
 
 console.log('общая сумма корзины:', cart.getTotalPrice());
 console.log('общее количество товаров:', cart.count);

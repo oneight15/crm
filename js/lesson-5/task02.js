@@ -17,7 +17,7 @@ const isPrime = n => {
   }
 
   return true;
-}
+};
 
 // console.log(isPrime(151));
 // console.log(isPrime(911));
@@ -39,5 +39,5 @@ const isPrime = n => {
 
 
 for (let i = -100, count = 0; i < 542; i++) {
-  isPrime(i) && console.log(`${++count}) - ${i}.`)
+  isPrime(i) && console.log(`${++count}) - ${i}.`);
 }

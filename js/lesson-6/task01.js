@@ -8,11 +8,12 @@ const filter = (allStudents, failedStudents) => {
       successStudents.push(student);
     }
   }
-  
-  return successStudents;
-}
 
-const allStudent = ['Иванов', 'Петров', 'Сидоров', 'Кузнецов', 'Смирнов', 'Попов', 'Соколов'];
+  return successStudents;
+};
+
+const allStudent = ['Иванов', 'Петров', 'Сидоров', 'Кузнецов', 'Смирнов',
+  'Попов', 'Соколов'];
 const failedStudent = ['Сидоров', 'Смирнов', 'Попов'];
 
 console.log(filter(allStudent, failedStudent));

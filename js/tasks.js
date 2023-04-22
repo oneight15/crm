@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 // Модуль 4 Урок 3 - Вторая задача
 
@@ -14,10 +14,10 @@ if (rain === 1) {
 // Модуль 4 Урок 3 - Третья задача
 
 const passGrade = 265;
-const studentMarkMath = prompt('Введите кол-во баллов по математике:');
-const studentMarkRussian = prompt('Введите кол-во баллов по русскому языку:');
-const studentMarkComputing = prompt('Введите кол-во баллов по информатике:');
-const studentGrade = +studentMarkMath + +studentMarkRussian + +studentMarkMath;
+const studMarkMath = prompt('Введите кол-во баллов по математике:');
+const studMarkRussian = prompt('Введите кол-во баллов по русскому языку:');
+const studMarkComputing = prompt('Введите кол-во баллов по информатике:');
+const studentGrade = +studMarkMath + +studMarkRussian + +studMarkComputing;
 
 if (studentGrade >= passGrade) {
   console.log('Поздравляю, вы поступили на бюджет!');
@@ -28,7 +28,6 @@ if (studentGrade >= passGrade) {
 // Модуль 4 Урок 3 - Четвёртая задача
 
 const cashOut = prompt('Cколько денег Вы хотите снять?');
-const kratnost = +cashOut / 100;
 
 if (Number.isInteger(+cashOut / 100)) {
   console.log('Выдаю деньги...');

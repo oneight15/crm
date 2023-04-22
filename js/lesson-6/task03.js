@@ -12,6 +12,7 @@
 
 const addPrefix = (arr, prefix) => arr.map(item => prefix + ' ' + item);
 
-const names= ['Noah', 'Liam', 'Mason', 'Jacob', 'Robot', 'William', 'Ethan', 'Michael', 'Alexander'];
+const names = ['Noah', 'Liam', 'Mason', 'Jacob', 'Robot', 'William',
+  'Ethan', 'Michael', 'Alexander'];
 
 console.log(addPrefix(names, 'Mr'));

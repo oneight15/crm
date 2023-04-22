@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 const calculate = (sum, count, promo) => {
   let price = sum;
@@ -19,6 +19,6 @@ const calculate = (sum, count, promo) => {
   }
 
   return price;
-}
+};
 
 console.log(calculate(60000, 11, 'G3H2Z1'));

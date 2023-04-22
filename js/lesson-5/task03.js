@@ -7,7 +7,7 @@ const reverseStr = str => {
     newStr += str[i];
   }
   return newStr;
-}
+};
 
 const reverse = str => str.split('').reverse().join('');
 
