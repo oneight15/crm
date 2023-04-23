@@ -1,0 +1,62 @@
+html {
+  position: relative;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: Inter;
+  font-size: 12px;
+  line-height: 125%;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase; 
+  color: #6E6893;
+}
+
+button {
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+button,
+input,
+textarea {
+  border: none;
+  background-color: transparent;
+}
+
+h1,
+h2,
+h3,
+p,
+figure,
+fieldset {
+  margin: 0;
+}
+
+fieldset {
+  border: none;
+}
+
+.container {
+  max-width: 1240px;
+  padding: 0 30px;
+  margin: 0 auto;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 5;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding-top: 50px;
+}
