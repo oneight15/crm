@@ -57,20 +57,40 @@
             <input class="modal__input" type="text" name="price" id="price" required>
           </div>
 
+          <div class="modal__field modal__field_error">
+            <p>Изображение не должно превышать размер 1 Мб</p>
+          </div>
+
           <div class="modal__field modal__field_file">
             <label class="modal__label_file" for="count">Добавить изображение</label>
             <input class="modal__input_file" type="file" name="file" id="file">
           </div>
 
+          <img class="item-image" src="img/item.png" alt="Изображение добавленного товара">
         </fieldset>
-        <button class="modal__submit" type="submit">Добавить товар</button>
-        <button class="modal__close" type="button" aria-label="Закрыть модальное окно">
+        <div class="modal__bottom-block">
+          <p class="modal__total-price total-price">
+            <span class="total-price__text">Итоговая стоимость:</span>
+            <span class="total-price__sum">$ 900.00</span>
+          </p>
+          <button class="modal__submit" type="submit">Добавить товар</button>
+        </div>
+      </form>
+      <button class="modal__close" type="button" aria-label="Закрыть модальное окно">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2 2L22 22" stroke="#6E6893" stroke-width="3" stroke-linecap="round"/>
+          <path d="M2 22L22 2" stroke="#6E6893" stroke-width="3" stroke-linecap="round"/>
+        </svg>                    
+      </button>
+      <div class="error-block">
+        <p class="error-block__text">Что-то пошло не так</p>
+        <button class="error-block__close" type="button" aria-label="Закрыть окно ошибки">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
             <path d="M2 2L22 22" stroke="#6E6893" stroke-width="3" stroke-linecap="round"/>
             <path d="M2 22L22 2" stroke="#6E6893" stroke-width="3" stroke-linecap="round"/>
           </svg>                    
         </button>
-      </form>
+      </div>
     </div>
   </div>
 </body>
