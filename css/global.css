@@ -12,13 +12,11 @@ html {
 body {
   min-width: 320px;
   min-height: 100vh;
-  font-family: Inter;
-  font-size: 12px;
-  line-height: 125%;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  text-transform: uppercase; 
-  color: #6E6893;
+  font-family: Inter;  
+  font-size: 14px;
+  line-height: calc(17 / 14);
+  font-weight: 500;
+  color: #25213B;
 }
 
 button {
@@ -47,8 +45,13 @@ fieldset {
   border: none;
 }
 
+img,
+svg {
+  font-size: 0;
+}
+
 .container {
-  max-width: 1240px;
+  max-width: 1160px;
   padding: 0 30px;
   margin: 0 auto;
 }

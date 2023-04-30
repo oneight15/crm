@@ -1,4 +1,14 @@
+.overlay {
+  display: none;
+}
+
 .modal {
+  font-size: 12px;
+  line-height: 1.25;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase; 
+  color: #6E6893;
   max-width: 792px;
   min-height: 613px;
   margin: 0 auto;
@@ -101,13 +111,42 @@
   align-self: end;
 }
 
-.item-image {
+.modal__image {
   grid-area: image;
   justify-self: center;
   padding-top: 17px;
   display: block;
+  cursor: pointer;
   position: relative;
   display: none;
+}
+
+.modal__image::before {
+  content: "";
+  display: block;
+  position: absolute;
+  inset: 0;
+  background-image: url(../../img/delete.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 3;
+  opacity: 0;
+}
+
+.modal__image::after {
+  content: "";
+  display: block;
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
+.modal__image:hover::before {
+  opacity: 1;
+}
+
+.modal__image:hover::after {
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
 }
 
 .modal__label {
@@ -209,7 +248,6 @@
   display: flex;
   justify-content: space-between;
   padding: 0 28px;
-  
 }
 
 .total-price__text {
@@ -225,6 +263,7 @@
   line-height: calc(22 / 18);
   font-weight: 700;
   letter-spacing: -0.4px;
+  color: #6D5BD0;
 }
 
 
@@ -277,4 +316,45 @@
   position: absolute;
   top: 26px;
   right: 29px;
+}
+
+@media (max-width: 840px) {
+  .modal {
+    max-width: 692px;
+    min-height: 613px;
+    margin: 0 auto;
+    padding: 32px 46px 28px;
+  }
+
+  .modal__top-block {
+    padding: 32px 46px 28px;
+    flex-wrap: wrap;
+  }
+
+  .modal__fieldset {
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "name"
+    "category"
+    "description"
+    "units"
+    "count"
+    "discount"
+    "price"
+    "error"
+    "file"
+    "image";
+  }
+
+  .modal__bottom-block {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 500px) {
+  .modal__title {
+    font-size: 24px;
+    line-height: 1.1;
+  }
 }
