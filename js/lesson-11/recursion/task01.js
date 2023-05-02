@@ -7,13 +7,8 @@ alert('Я загадал число от 1 до 100, попробуй угада
 const game = tryToGuess => {
   tryToGuess = prompt('Введи число');
 
-  if (tryToGuess === null) {
-    alert('Сыграем в другой раз!');
-    return;
-  }
-
   switch (true) {
-    case null:
+    case tryToGuess === null:
       alert('Сыграем в другой раз!');
       return;
 
