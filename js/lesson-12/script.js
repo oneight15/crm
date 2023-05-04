@@ -14,36 +14,33 @@
     FIGURES_ENG : FIGURES_RUS;
 
     return function start() {
-      const computerChoice = lang[Math.floor(Math.random() * lang.length)];
-      const selectedItem = prompt('камень, ножницы, бумага?');
+      const computerChoice = Math.floor(Math.random() * lang.length);
+      const selectedItem = prompt(`${lang.join(', ')}?`);
       let acceptQuit;
 
       const playerChoice = selectedItem ?
-        lang.find(item => item.startsWith(selectedItem.toLowerCase())) : '';
+        lang.indexOf(lang.find(item => item.startsWith(selectedItem.toLowerCase()))) : '';
 
       switch (true) {
         case selectedItem === null:
-          acceptQuit = prompt(`прервать игру?`);
-          acceptQuit !== '' ?
-            start() : alert(` результаты игры: \n компьютер: ${result.computer} \n игрок: ${result.player}`);
+          acceptQuit = confirm(`прервать игру?`);
+          acceptQuit ? alert(` результаты игры: \n компьютер: ${result.computer} \n игрок: ${result.player}`) : start();
           return;
 
-        case !lang.includes(playerChoice) || playerChoice === '':
+        case !lang.includes(lang[playerChoice]) || lang[playerChoice] === '':
           break;
 
         case playerChoice === computerChoice:
-          alert(` компьютер выбрал ${computerChoice} \n игрок выбрал ${playerChoice} \n ничья!`);
+          alert(` компьютер выбрал ${lang[computerChoice]} \n игрок выбрал ${lang[playerChoice]} \n ничья!`);
           break;
 
-        case playerChoice === 'камень' && computerChoice === 'ножницы':
-        case playerChoice === 'ножницы' && computerChoice === 'бумага':
-        case playerChoice === 'бумага' && computerChoice === 'камень':
-          alert(` компьютер выбрал ${computerChoice} \n игрок выбрал ${playerChoice} \n вы выиграли!`);
+        case (playerChoice + 1) % 3 === computerChoice:
+          alert(` компьютер выбрал ${lang[computerChoice]} \n игрок выбрал ${lang[playerChoice]} \n вы выиграли!`);
           result.player++;
           break;
 
         default:
-          alert(` компьютер выбрал ${computerChoice} \n игрок выбрал ${playerChoice} \n вы проиграли!`);
+          alert(` компьютер выбрал ${lang[computerChoice]} \n игрок выбрал ${lang[playerChoice]} \n вы проиграли!`);
           result.computer++;
           break;
       }
