@@ -35,11 +35,11 @@
 
     const movePlayer = () => {
       const playerNum = prompt(`загадай число от 1 до ${balls._player}`);
-      const computerChoice = Math.round(Math.random());
+      const computerChoice = getRandomIntInclusive(1, balls._player) % 2;
 
       switch (true) {
         case playerNum === null:
-          alert('пользователь пропускает ход');
+          alert('игрок пропускает ход');
           return;
 
         case isNaN(Number(playerNum)):
@@ -56,13 +56,13 @@
         case (playerNum % 2) === computerChoice:
           balls.player -= +playerNum;
           balls.computer += +playerNum;
-          alert(` счет: \n игрок: ${balls._player} \n бот: ${balls._computer}`);
+          alert(` счет: \n игрок: ${balls._player > 0 ? balls._player : 0} \n бот: ${balls._computer < 10 ? balls._computer : 10}`);
           break;
 
         default:
           balls.player += +playerNum;
           balls.computer -= +playerNum;
-          alert(` счет: \n игрок: ${balls._player} \n бот: ${balls._computer}`);
+          alert(` счет: \n игрок: ${balls._player < 10 ? balls._player : 10} \n бот: ${balls._computer > 0 ? balls._computer : 0}`);
           break;
       }
     };
@@ -79,14 +79,14 @@
           alert(`правильно! я загадывал число ${computerNum}`);
           balls.player += computerNum;
           balls.computer -= computerNum;
-          alert(` счет: \n игрок: ${balls._player} \n бот: ${balls._computer}`);
+          alert(` счет: \n игрок: ${balls._player < 10 ? balls._player : 10} \n бот: ${balls._computer > 0 ? balls._computer : 0}`);
           break;
 
         default:
           alert(`неправильно! я загадывал число ${computerNum}`);
           balls.player -= computerNum;
           balls.computer += computerNum;
-          alert(` счет: \n игрок: ${balls._player} \n бот: ${balls._computer}`);
+          alert(` счет: \n игрок: ${balls._player > 0 ? balls._player : 0} \n бот: ${balls._computer < 10 ? balls._computer : 10}`);
           break;
       }
     };
@@ -123,16 +123,16 @@
           break;
 
         case playerChoice === computerChoice:
-          alert(` компьютер выбрал ${items[computerChoice]} \n игрок выбрал ${items[playerChoice]} \n ничья!`);
+          alert(` бот выбрал ${items[computerChoice]} \n игрок выбрал ${items[playerChoice]} \n ничья!`);
           break;
 
         case (playerChoice + 1) % 3 === computerChoice:
-          alert(` компьютер выбрал ${items[computerChoice]} \n игрок выбрал ${items[playerChoice]} \n пользователь ходит первый!`);
+          alert(` бот выбрал ${items[computerChoice]} \n игрок выбрал ${items[playerChoice]} \n игрок ходит первый!`);
           winner = true;
           return;
 
         default:
-          alert(` компьютер выбрал ${items[computerChoice]} \n игрок выбрал ${items[playerChoice]} \n бот ходит первый!!`);
+          alert(` бот выбрал ${items[computerChoice]} \n игрок выбрал ${items[playerChoice]} \n бот ходит первый!!`);
           winner = false;
           return;
       }
@@ -150,7 +150,7 @@
 
       default:
         start(winner, movePlayer, moveComputer, condition);
-        alert(`выиграл ${balls._player < 1 ? 'компьютер' : 'пользователь'}`);
+        alert(`выиграл ${balls._player < 1 ? 'бот' : 'игрок'}`);
         confirm('сыграем еще?') ? game() : alert('в другой раз ;)');
     }
   };
