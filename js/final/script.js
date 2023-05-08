@@ -39,7 +39,8 @@
 
       switch (true) {
         case playerNum === null:
-          alert('игрок пропускает ход');
+          balls.player -= 10;
+          alert('игрок покидает игру, техническое поражение %(');
           return;
 
         case isNaN(Number(playerNum)):
