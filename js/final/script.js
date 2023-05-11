@@ -155,7 +155,7 @@
         break;
     }
 
-    if (balls._player === 10 || balls._computer === 10) {
+    if (balls._player >= 10 || balls._computer >= 10) {
       confirm('сыграем еще?') ? game() : alert('в другой раз ;)');
     } else {
       return;
