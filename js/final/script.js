@@ -152,7 +152,13 @@
       default:
         start(winner, movePlayer, moveComputer, condition);
         alert(`выиграл ${balls._player < 1 ? 'бот' : 'игрок'}`);
-        confirm('сыграем еще?') ? game() : alert('в другой раз ;)');
+        break;
+    }
+
+    if (balls._player === 10 || balls._computer === 10) {
+      confirm('сыграем еще?') ? game() : alert('в другой раз ;)');
+    } else {
+      return;
     }
   };
 
