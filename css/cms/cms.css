@@ -111,18 +111,12 @@
   justify-self: end;
   display: flex;
   gap: 5px;
+  align-items: center;
 }
 
 .cms__select-btn {
-  display: flex;
-  gap: 5px;
-  align-items: center;
+  border: none;
   color: inherit;
-  transition: 0.3s all;
-}
-
-.cms__select-btn:hover {
-  color: #640AA3;
 }
 
 .cms__pages {
